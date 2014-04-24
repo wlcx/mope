@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBF1C320190954A6007F5B40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF1C31F190954A6007F5B40 /* Cocoa.framework */; };
+		DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBF1C328190954A6007F5B40 /* InfoPlist.strings */; };
+		DBF1C32C190954A6007F5B40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1C32B190954A6007F5B40 /* main.m */; };
+		DBF1C330190954A6007F5B40 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DBF1C32E190954A6007F5B40 /* Credits.rtf */; };
+		DBF1C333190954A6007F5B40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1C332190954A6007F5B40 /* AppDelegate.m */; };
+		DBF1C336190954A6007F5B40 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBF1C334190954A6007F5B40 /* MainMenu.xib */; };
+		DBF1C338190954A6007F5B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF1C337190954A6007F5B40 /* Images.xcassets */; };
+		DBF1C33F190954A6007F5B40 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF1C33E190954A6007F5B40 /* XCTest.framework */; };
+		DBF1C340190954A6007F5B40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF1C31F190954A6007F5B40 /* Cocoa.framework */; };
+		DBF1C348190954A6007F5B40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBF1C346190954A6007F5B40 /* InfoPlist.strings */; };
+		DBF1C34A190954A6007F5B40 /* mopeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1C349190954A6007F5B40 /* mopeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBF1C341190954A6007F5B40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBF1C314190954A6007F5B40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBF1C31B190954A6007F5B40;
+			remoteInfo = mope;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DBF1C31C190954A6007F5B40 /* mope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBF1C31F190954A6007F5B40 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DBF1C322190954A6007F5B40 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DBF1C323190954A6007F5B40 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DBF1C324190954A6007F5B40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DBF1C327190954A6007F5B40 /* mope-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mope-Info.plist"; sourceTree = "<group>"; };
+		DBF1C329190954A6007F5B40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DBF1C32B190954A6007F5B40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DBF1C32D190954A6007F5B40 /* mope-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mope-Prefix.pch"; sourceTree = "<group>"; };
+		DBF1C32F190954A6007F5B40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DBF1C331190954A6007F5B40 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DBF1C332190954A6007F5B40 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DBF1C335190954A6007F5B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DBF1C337190954A6007F5B40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DBF1C33D190954A6007F5B40 /* mopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBF1C33E190954A6007F5B40 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DBF1C345190954A6007F5B40 /* mopeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mopeTests-Info.plist"; sourceTree = "<group>"; };
+		DBF1C347190954A6007F5B40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DBF1C349190954A6007F5B40 /* mopeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mopeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBF1C319190954A6007F5B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF1C320190954A6007F5B40 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBF1C33A190954A6007F5B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF1C340190954A6007F5B40 /* Cocoa.framework in Frameworks */,
+				DBF1C33F190954A6007F5B40 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBF1C313190954A6007F5B40 = {
+			isa = PBXGroup;
+			children = (
+				DBF1C325190954A6007F5B40 /* mope */,
+				DBF1C343190954A6007F5B40 /* mopeTests */,
+				DBF1C31E190954A6007F5B40 /* Frameworks */,
+				DBF1C31D190954A6007F5B40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBF1C31D190954A6007F5B40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBF1C31C190954A6007F5B40 /* mope.app */,
+				DBF1C33D190954A6007F5B40 /* mopeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBF1C31E190954A6007F5B40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBF1C31F190954A6007F5B40 /* Cocoa.framework */,
+				DBF1C33E190954A6007F5B40 /* XCTest.framework */,
+				DBF1C321190954A6007F5B40 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBF1C321190954A6007F5B40 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBF1C322190954A6007F5B40 /* AppKit.framework */,
+				DBF1C323190954A6007F5B40 /* CoreData.framework */,
+				DBF1C324190954A6007F5B40 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DBF1C325190954A6007F5B40 /* mope */ = {
+			isa = PBXGroup;
+			children = (
+				DBF1C331190954A6007F5B40 /* AppDelegate.h */,
+				DBF1C332190954A6007F5B40 /* AppDelegate.m */,
+				DBF1C334190954A6007F5B40 /* MainMenu.xib */,
+				DBF1C337190954A6007F5B40 /* Images.xcassets */,
+				DBF1C326190954A6007F5B40 /* Supporting Files */,
+			);
+			path = mope;
+			sourceTree = "<group>";
+		};
+		DBF1C326190954A6007F5B40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBF1C327190954A6007F5B40 /* mope-Info.plist */,
+				DBF1C328190954A6007F5B40 /* InfoPlist.strings */,
+				DBF1C32B190954A6007F5B40 /* main.m */,
+				DBF1C32D190954A6007F5B40 /* mope-Prefix.pch */,
+				DBF1C32E190954A6007F5B40 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBF1C343190954A6007F5B40 /* mopeTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBF1C349190954A6007F5B40 /* mopeTests.m */,
+				DBF1C344190954A6007F5B40 /* Supporting Files */,
+			);
+			path = mopeTests;
+			sourceTree = "<group>";
+		};
+		DBF1C344190954A6007F5B40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBF1C345190954A6007F5B40 /* mopeTests-Info.plist */,
+				DBF1C346190954A6007F5B40 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBF1C31B190954A6007F5B40 /* mope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBF1C34D190954A6007F5B40 /* Build configuration list for PBXNativeTarget "mope" */;
+			buildPhases = (
+				DBF1C318190954A6007F5B40 /* Sources */,
+				DBF1C319190954A6007F5B40 /* Frameworks */,
+				DBF1C31A190954A6007F5B40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mope;
+			productName = mope;
+			productReference = DBF1C31C190954A6007F5B40 /* mope.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DBF1C33C190954A6007F5B40 /* mopeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBF1C350190954A6007F5B40 /* Build configuration list for PBXNativeTarget "mopeTests" */;
+			buildPhases = (
+				DBF1C339190954A6007F5B40 /* Sources */,
+				DBF1C33A190954A6007F5B40 /* Frameworks */,
+				DBF1C33B190954A6007F5B40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBF1C342190954A6007F5B40 /* PBXTargetDependency */,
+			);
+			name = mopeTests;
+			productName = mopeTests;
+			productReference = DBF1C33D190954A6007F5B40 /* mopeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBF1C314190954A6007F5B40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = wlcx;
+				TargetAttributes = {
+					DBF1C33C190954A6007F5B40 = {
+						TestTargetID = DBF1C31B190954A6007F5B40;
+					};
+				};
+			};
+			buildConfigurationList = DBF1C317190954A6007F5B40 /* Build configuration list for PBXProject "mope" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DBF1C313190954A6007F5B40;
+			productRefGroup = DBF1C31D190954A6007F5B40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBF1C31B190954A6007F5B40 /* mope */,
+				DBF1C33C190954A6007F5B40 /* mopeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DBF1C31A190954A6007F5B40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */,
+				DBF1C338190954A6007F5B40 /* Images.xcassets in Resources */,
+				DBF1C330190954A6007F5B40 /* Credits.rtf in Resources */,
+				DBF1C336190954A6007F5B40 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBF1C33B190954A6007F5B40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF1C348190954A6007F5B40 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBF1C318190954A6007F5B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF1C333190954A6007F5B40 /* AppDelegate.m in Sources */,
+				DBF1C32C190954A6007F5B40 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBF1C339190954A6007F5B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF1C34A190954A6007F5B40 /* mopeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBF1C342190954A6007F5B40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBF1C31B190954A6007F5B40 /* mope */;
+			targetProxy = DBF1C341190954A6007F5B40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DBF1C328190954A6007F5B40 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBF1C329190954A6007F5B40 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DBF1C32E190954A6007F5B40 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBF1C32F190954A6007F5B40 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		DBF1C334190954A6007F5B40 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBF1C335190954A6007F5B40 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		DBF1C346190954A6007F5B40 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBF1C347190954A6007F5B40 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DBF1C34B190954A6007F5B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DBF1C34C190954A6007F5B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DBF1C34E190954A6007F5B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mope/mope-Prefix.pch";
+				INFOPLIST_FILE = "mope/mope-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DBF1C34F190954A6007F5B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mope/mope-Prefix.pch";
+				INFOPLIST_FILE = "mope/mope-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DBF1C351190954A6007F5B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mope.app/Contents/MacOS/mope";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mope/mope-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "mopeTests/mopeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DBF1C352190954A6007F5B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mope.app/Contents/MacOS/mope";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mope/mope-Prefix.pch";
+				INFOPLIST_FILE = "mopeTests/mopeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBF1C317190954A6007F5B40 /* Build configuration list for PBXProject "mope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBF1C34B190954A6007F5B40 /* Debug */,
+				DBF1C34C190954A6007F5B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBF1C34D190954A6007F5B40 /* Build configuration list for PBXNativeTarget "mope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBF1C34E190954A6007F5B40 /* Debug */,
+				DBF1C34F190954A6007F5B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DBF1C350190954A6007F5B40 /* Build configuration list for PBXNativeTarget "mopeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBF1C351190954A6007F5B40 /* Debug */,
+				DBF1C352190954A6007F5B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBF1C314190954A6007F5B40 /* Project object */;
+}

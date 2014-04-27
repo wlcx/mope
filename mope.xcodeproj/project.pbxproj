@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22485791190B556700A7CD9E /* icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248578F190B556700A7CD9E /* icon_active.png */; };
+		22485792190B556700A7CD9E /* icon_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 22485790190B556700A7CD9E /* icon_inactive.png */; };
+		DB650EBD190978A1003C7BA0 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB650EB81909788C003C7BA0 /* SocketRocket.framework */; };
+		DB650EBF190978C2003C7BA0 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = DB650EBE190978C2003C7BA0 /* SRWebSocket.h */; };
 		DBF1C320190954A6007F5B40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF1C31F190954A6007F5B40 /* Cocoa.framework */; };
 		DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBF1C328190954A6007F5B40 /* InfoPlist.strings */; };
 		DBF1C32C190954A6007F5B40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1C32B190954A6007F5B40 /* main.m */; };
@@ -21,6 +25,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DB650EB51909788C003C7BA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6B2082D1450F597009315AF;
+			remoteInfo = SocketRocket;
+		};
+		DB650EB71909788C003C7BA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F668C880153E91210044DBAC;
+			remoteInfo = SocketRocketOSX;
+		};
+		DB650EB91909788C003C7BA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6BDA802145900D200FE3253;
+			remoteInfo = SRWebSocketTests;
+		};
+		DB650EBB1909788C003C7BA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F62417E314D52F3C003CE997;
+			remoteInfo = TestChat;
+		};
 		DBF1C341190954A6007F5B40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DBF1C314190954A6007F5B40 /* Project object */;
@@ -31,6 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2248578F190B556700A7CD9E /* icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_active.png; sourceTree = "<group>"; };
+		22485790190B556700A7CD9E /* icon_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_inactive.png; sourceTree = "<group>"; };
+		DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocketRocket.xcodeproj; path = SocketRocket/SocketRocket.xcodeproj; sourceTree = "<group>"; };
+		DB650EBE190978C2003C7BA0 /* SRWebSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
 		DBF1C31C190954A6007F5B40 /* mope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF1C31F190954A6007F5B40 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DBF1C322190954A6007F5B40 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -57,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB650EBD190978A1003C7BA0 /* SocketRocket.framework in Frameworks */,
 				DBF1C320190954A6007F5B40 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,9 +110,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB650EAF1909788B003C7BA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB650EB61909788C003C7BA0 /* libSocketRocket.a */,
+				DB650EB81909788C003C7BA0 /* SocketRocket.framework */,
+				DB650EBA1909788C003C7BA0 /* SRWebSocketTests.octest */,
+				DB650EBC1909788C003C7BA0 /* TestChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		DBF1C313190954A6007F5B40 = {
 			isa = PBXGroup;
 			children = (
+				DB650EBE190978C2003C7BA0 /* SRWebSocket.h */,
+				DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */,
 				DBF1C325190954A6007F5B40 /* mope */,
 				DBF1C343190954A6007F5B40 /* mopeTests */,
 				DBF1C31E190954A6007F5B40 /* Frameworks */,
@@ -117,6 +167,8 @@
 			children = (
 				DBF1C331190954A6007F5B40 /* AppDelegate.h */,
 				DBF1C332190954A6007F5B40 /* AppDelegate.m */,
+				2248578F190B556700A7CD9E /* icon_active.png */,
+				22485790190B556700A7CD9E /* icon_inactive.png */,
 				DBF1C334190954A6007F5B40 /* MainMenu.xib */,
 				DBF1C337190954A6007F5B40 /* Images.xcassets */,
 				DBF1C326190954A6007F5B40 /* Supporting Files */,
@@ -156,6 +208,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		DB650EAB1909634C003C7BA0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB650EBF190978C2003C7BA0 /* SRWebSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		DBF1C31B190954A6007F5B40 /* mope */ = {
 			isa = PBXNativeTarget;
@@ -164,6 +227,7 @@
 				DBF1C318190954A6007F5B40 /* Sources */,
 				DBF1C319190954A6007F5B40 /* Frameworks */,
 				DBF1C31A190954A6007F5B40 /* Resources */,
+				DB650EAB1909634C003C7BA0 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -217,6 +281,12 @@
 			mainGroup = DBF1C313190954A6007F5B40;
 			productRefGroup = DBF1C31D190954A6007F5B40 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DB650EAF1909788B003C7BA0 /* Products */;
+					ProjectRef = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DBF1C31B190954A6007F5B40 /* mope */,
@@ -225,6 +295,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		DB650EB61909788C003C7BA0 /* libSocketRocket.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSocketRocket.a;
+			remoteRef = DB650EB51909788C003C7BA0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB650EB81909788C003C7BA0 /* SocketRocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SocketRocket.framework;
+			remoteRef = DB650EB71909788C003C7BA0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB650EBA1909788C003C7BA0 /* SRWebSocketTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SRWebSocketTests.octest;
+			remoteRef = DB650EB91909788C003C7BA0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DB650EBC1909788C003C7BA0 /* TestChat.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestChat.app;
+			remoteRef = DB650EBB1909788C003C7BA0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		DBF1C31A190954A6007F5B40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -232,6 +333,8 @@
 			files = (
 				DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */,
 				DBF1C338190954A6007F5B40 /* Images.xcassets in Resources */,
+				22485791190B556700A7CD9E /* icon_active.png in Resources */,
+				22485792190B556700A7CD9E /* icon_inactive.png in Resources */,
 				DBF1C330190954A6007F5B40 /* Credits.rtf in Resources */,
 				DBF1C336190954A6007F5B40 /* MainMenu.xib in Resources */,
 			);
@@ -466,6 +569,7 @@
 				DBF1C34F190954A6007F5B40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBF1C350190954A6007F5B40 /* Build configuration list for PBXNativeTarget "mopeTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +578,7 @@
 				DBF1C352190954A6007F5B40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

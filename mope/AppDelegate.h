@@ -9,13 +9,17 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+@property (assign) IBOutlet NSWindow *window;
+
 @property (weak) IBOutlet NSMenuItem *tracklabel;
 @property (weak) IBOutlet NSMenuItem *artistlabel;
-
-@property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSMenuItem *menuItemPlayPause;
 @property (strong, nonatomic) NSStatusItem *statusItem;
 @property (strong, nonatomic) IBOutlet NSMenu *statusMenu;
-- (IBAction)play:(id)sender;
-- (IBAction)pause:(id)sender;
-@property (weak) IBOutlet NSMenuItem *updatePlayState;
+
+@property NSImage *statusImageInactive;
+@property NSImage *statusImageActive;
+
+- (IBAction)playPause:(id)sender;
+
 @end

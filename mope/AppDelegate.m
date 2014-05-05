@@ -25,9 +25,19 @@
     [self.statusItem setImage:self.statusImageInactive];
 //    NSNetServiceBrowser *serviceBrowser;
 //    serviceBrowser = [[NSNetServiceBrowser alloc] init];
-    mopidyConnector = [[MopidyConnector alloc] initWithURL:[NSURL URLWithString:@"ws://127.0.0.1:6680/mopidy/ws/"]];
-    mopidyConnector.mcdelegate = self;
-    [mopidyConnector connect];
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Enter server URL" defaultButton:@"Connect" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@""];
+    NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 220, 24)];
+    [input setStringValue:@"ws://127.0.0.1:6680/mopidy/ws/"];
+    [alert setAccessoryView:input];
+    NSInteger button = [alert runModal];
+    if (button == NSAlertDefaultReturn) {
+        mopidyConnector = [[MopidyConnector alloc] initWithURL:[NSURL URLWithString:[input stringValue]]];
+        mopidyConnector.mcdelegate = self;
+        [mopidyConnector connect];
+    }
+    else if (button == NSAlertAlternateReturn) {
+        [[NSApplication sharedApplication] terminate:nil];
+    }
 }
 
 

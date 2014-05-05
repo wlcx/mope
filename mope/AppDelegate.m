@@ -17,8 +17,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.statusImageInactive = [NSImage imageNamed:@"icon_inactive.png"];
-    self.statusImageActive = [NSImage imageNamed:@"icon_active.png"];
+    self.statusImageInactive = [NSImage imageNamed:@"statusbar_icon_inactive"];
+    self.statusImageActive = [NSImage imageNamed:@"statusbar_icon_active.png"];
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setMenu:self.statusMenu];
     [self.statusItem setHighlightMode:YES];

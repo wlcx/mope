@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22485791190B556700A7CD9E /* icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 2248578F190B556700A7CD9E /* icon_active.png */; };
-		22485792190B556700A7CD9E /* icon_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 22485790190B556700A7CD9E /* icon_inactive.png */; };
 		226B8525190CBC14002BF624 /* MopidyConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 226B8523190CBC14002BF624 /* MopidyConnector.h */; };
 		226B8526190CBC14002BF624 /* MopidyConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 226B8524190CBC14002BF624 /* MopidyConnector.m */; };
 		DB650EBD190978A1003C7BA0 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB650EB81909788C003C7BA0 /* SocketRocket.framework */; };
@@ -64,8 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2248578F190B556700A7CD9E /* icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_active.png; sourceTree = "<group>"; };
-		22485790190B556700A7CD9E /* icon_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_inactive.png; sourceTree = "<group>"; };
 		226B8523190CBC14002BF624 /* MopidyConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MopidyConnector.h; sourceTree = "<group>"; };
 		226B8524190CBC14002BF624 /* MopidyConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MopidyConnector.m; sourceTree = "<group>"; };
 		DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocketRocket.xcodeproj; path = SocketRocket/SocketRocket.xcodeproj; sourceTree = "<group>"; };
@@ -171,8 +167,6 @@
 				DBF1C332190954A6007F5B40 /* AppDelegate.m */,
 				226B8523190CBC14002BF624 /* MopidyConnector.h */,
 				226B8524190CBC14002BF624 /* MopidyConnector.m */,
-				2248578F190B556700A7CD9E /* icon_active.png */,
-				22485790190B556700A7CD9E /* icon_inactive.png */,
 				DBF1C334190954A6007F5B40 /* MainMenu.xib */,
 				DBF1C337190954A6007F5B40 /* Images.xcassets */,
 				DBF1C326190954A6007F5B40 /* Supporting Files */,
@@ -337,8 +331,6 @@
 			files = (
 				DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */,
 				DBF1C338190954A6007F5B40 /* Images.xcassets in Resources */,
-				22485791190B556700A7CD9E /* icon_active.png in Resources */,
-				22485792190B556700A7CD9E /* icon_inactive.png in Resources */,
 				DBF1C336190954A6007F5B40 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

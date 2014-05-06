@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		226B8525190CBC14002BF624 /* MopidyConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 226B8523190CBC14002BF624 /* MopidyConnector.h */; };
 		226B8526190CBC14002BF624 /* MopidyConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 226B8524190CBC14002BF624 /* MopidyConnector.m */; };
+		22B745E919185CF4009CB6BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22B745E819185CF4009CB6BC /* README.md */; };
 		DB650EBD190978A1003C7BA0 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB650EB81909788C003C7BA0 /* SocketRocket.framework */; };
 		DB650EBF190978C2003C7BA0 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = DB650EBE190978C2003C7BA0 /* SRWebSocket.h */; };
 		DBF1C320190954A6007F5B40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF1C31F190954A6007F5B40 /* Cocoa.framework */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		226B8523190CBC14002BF624 /* MopidyConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MopidyConnector.h; sourceTree = "<group>"; };
 		226B8524190CBC14002BF624 /* MopidyConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MopidyConnector.m; sourceTree = "<group>"; };
+		22B745E819185CF4009CB6BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocketRocket.xcodeproj; path = SocketRocket/SocketRocket.xcodeproj; sourceTree = "<group>"; };
 		DB650EBE190978C2003C7BA0 /* SRWebSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
 		DBF1C31C190954A6007F5B40 /* mope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 		DBF1C313190954A6007F5B40 = {
 			isa = PBXGroup;
 			children = (
+				22B745E819185CF4009CB6BC /* README.md */,
 				DB650EBE190978C2003C7BA0 /* SRWebSocket.h */,
 				DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */,
 				DBF1C325190954A6007F5B40 /* mope */,
@@ -331,6 +334,7 @@
 			files = (
 				DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */,
 				DBF1C338190954A6007F5B40 /* Images.xcassets in Resources */,
+				22B745E919185CF4009CB6BC /* README.md in Resources */,
 				DBF1C336190954A6007F5B40 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

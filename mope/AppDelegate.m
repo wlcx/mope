@@ -25,19 +25,10 @@
     [self.statusItem setImage:self.statusImageInactive];
 //    NSNetServiceBrowser *serviceBrowser;
 //    serviceBrowser = [[NSNetServiceBrowser alloc] init];
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Enter server URL" defaultButton:@"Connect" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@""];
-    NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 220, 24)];
-    [input setStringValue:@"ws://127.0.0.1:6680/mopidy/ws/"];
-    [alert setAccessoryView:input];
-    NSInteger button = [alert runModal];
-    if (button == NSAlertDefaultReturn) {
-        mopidyConnector = [[MopidyConnector alloc] initWithURL:[NSURL URLWithString:[input stringValue]]];
-        mopidyConnector.mcdelegate = self;
-        [mopidyConnector connect];
-    }
-    else if (button == NSAlertAlternateReturn) {
-        [[NSApplication sharedApplication] terminate:nil];
-    }
+    self.alert = [NSAlert alertWithMessageText:@"Enter server URL" defaultButton:@"Connect" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@""];
+    self.urlInput = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 220, 24)];
+    [self.urlInput setStringValue:@"ws://127.0.0.1:6680/mopidy/ws/"];
+    [self.alert setAccessoryView:self.urlInput];
 }
 
 
@@ -50,8 +41,25 @@
     [mopidyConnector togglePlayState];
 }
 
+- (IBAction)toggleConnect:(id)sender;
+{
+    if(mopidyConnector.connected)
+    {
+        [mopidyConnector disconnect];
+    }
+    else
+    {
+        NSInteger button = [self.alert runModal];
+        if (button == NSAlertDefaultReturn) {
+            mopidyConnector = [[MopidyConnector alloc] initWithURL:[NSURL URLWithString:[self.urlInput stringValue]]];
+            mopidyConnector.mcdelegate = self;
+            [mopidyConnector connect];
+        }
+    }
+}
+
 #pragma mark - MopidyConnectorDelegate
-- (void)playStateChanged:(MopidyConnector *)wat
+- (void)playStateChanged:(MopidyConnector *)sender
 {
     if([[mopidyConnector currentPlayState] isEqualToString:@"playing"])
     {
@@ -67,15 +75,17 @@
     }
 }
 
-- (void)connected:(MopidyConnector *)mopidyConnector
+- (void)connected:(MopidyConnector *)sender
 {
     NSLog(@"Connected");
     [self.statusItem setImage:self.statusImageActive];
+    [self.menuItemConnectToggle setTitle:@"Disconnect"];
     [mopidyConnector updatePlayState];
 }
 
-- (void)disconnected:(MopidyConnector *)mopidyConnector
+- (void)disconnected:(MopidyConnector *)sender
 {
     [self.statusItem setImage:self.statusImageInactive];
+    [self.menuItemConnectToggle setTitle:@"Connect"];
 }
 @end

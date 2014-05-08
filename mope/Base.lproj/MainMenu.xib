@@ -13,8 +13,11 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="artistlabel" destination="Gm2-Tv-5o1" id="NQX-7E-JX6"/>
+                <outlet property="menuItemConnectToggle" destination="2GG-nb-Uqd" id="vrD-Mh-iZn"/>
                 <outlet property="menuItemPlayPause" destination="YAS-dZ-Ldc" id="8TL-j7-S4y"/>
                 <outlet property="statusMenu" destination="HAD-Ws-SPB" id="E7K-CQ-1yH"/>
+                <outlet property="tracklabel" destination="zLU-KE-kAL" id="nRX-PB-qMH"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -23,10 +26,10 @@
                 <menuItem title="Now Playing:" enabled="NO" id="pIB-xf-9Lw">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="trackname" enabled="NO" id="zLU-KE-kAL">
+                <menuItem title="trackname" hidden="YES" enabled="NO" id="zLU-KE-kAL">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="artistname" enabled="NO" id="Gm2-Tv-5o1">
+                <menuItem title="artistname" hidden="YES" enabled="NO" id="Gm2-Tv-5o1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Meg-gG-B6m"/>
@@ -37,6 +40,13 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="btm-cm-A1S"/>
+                <menuItem title="Connect" id="2GG-nb-Uqd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleConnect:" target="Voe-Tx-rLC" id="YzL-XX-PD7"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Brp-b7-cQm"/>
                 <menuItem title="Quit Mope" id="e4I-qE-zJr">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

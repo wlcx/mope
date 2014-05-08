@@ -23,6 +23,11 @@
     {
         self.socketURL = socketURL;
         _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[self socketURL]]];
+        self.connected = false;
+        self.currentArtist = @"";
+        self.currentTrack = @"";
+        self.requestID = 1;
+        self.pendingInvocations = [NSMutableDictionary dictionary];
         return self;
     }
     else
@@ -36,30 +41,76 @@
     [_webSocket open];
 }
 
-- (NSMutableDictionary *)makeRPCMethod:(NSString *)method
+- (void)disconnect
 {
+    NSLog(@"Closing socket....");
+    [_webSocket close];
+    NSLog(@"Closed");
+    _webSocket.delegate = nil;
+    self.connected = false;
+    [self.mcdelegate disconnected:self];
+}
+
+- (void)invokeRPCMethod:(NSString *)method
+                success:(void (^)(NSDictionary *response))success
+                  error:(void (^)(NSDictionary *response))error;
+{
+    NSInteger requestId = self.requestID++; // get the next request id then increment it for next time
     NSMutableDictionary *payload = [NSMutableDictionary dictionary];
     payload[@"jsonrpc"] = @"2.0";
     payload[@"method"] = method;
-    payload[@"id"] = [NSNumber numberWithInt:1];
-    return payload;
+    payload[@"id"] = [NSNumber numberWithInteger:requestId];
+    [_webSocket send:([NSJSONSerialization dataWithJSONObject:payload options:0 error:nil])];
+    [self.pendingInvocations setObject:[NSArray arrayWithObjects: success, error, nil] forKey: [NSNumber numberWithInteger:requestId]];
+}
+
+- (void)processRPCResponse:(NSDictionary*)response
+{
+    NSArray *callbacks;
+    if((callbacks = [self.pendingInvocations objectForKey:[NSNumber numberWithInteger:[response[@"id"] integerValue]]])) // Check if we have this response's ID as a pending request
+    {
+        if([response objectForKey:@"result"])
+        {
+            void (^success)(NSDictionary *response) = [callbacks objectAtIndex:0];
+            success(response);
+        }
+        else if([response objectForKey:@"error"])
+        {
+            void (^error)(NSDictionary *response) = [callbacks objectAtIndex:0];
+            error(response);
+        }
+        [self.pendingInvocations removeObjectForKey:response[@"id"]];
+    }
+    else // We don't know anything about this ID. This probably shouldn't happen
+    {
+        NSLog(@"ID %@ is not one we have as pending", response[@"id"]);
+        NSLog(@"Pending: %@", self.pendingInvocations);
+    }
 }
 
 - (void)togglePlayState
 {
     if([[self currentPlayState] isEqualToString:@"playing"])
     {
-        [_webSocket send:([NSJSONSerialization dataWithJSONObject:[self makeRPCMethod:@"core.playback.pause"] options:0 error:nil])];
+        [self invokeRPCMethod:@"core.playback.pause"
+                      success:^(NSDictionary *response){
+                      }
+                        error:^(NSDictionary *response){
+                        }
+         ];
     }
     else if([[self currentPlayState] isEqualToString:@"paused"])
     {
-        [_webSocket send:([NSJSONSerialization dataWithJSONObject:[self makeRPCMethod:@"core.playback.play"] options:0 error:nil])];
+        [self invokeRPCMethod:@"core.playback.play" success:^(NSDictionary *response){} error:^(NSDictionary *response){}];
     }
 }
 
 - (void)updatePlayState
 {
-    [_webSocket send:([NSJSONSerialization dataWithJSONObject:[self makeRPCMethod:@"core.playback.get_state"] options:0 error:nil])];
+    [self invokeRPCMethod:@"core.playback.get_state"
+                  success:^(NSDictionary *response){self.currentPlayState = response[@"result"]; [self.mcdelegate playStateChanged:self];}
+                    error:^(NSDictionary *response){}
+     ];
 }
 
 #pragma mark - SRWebSocketDelegate
@@ -75,20 +126,32 @@
             self.currentPlayState = response[@"new_state"];
             [self.mcdelegate playStateChanged:self];
         }
+        if([response[@"event"] isEqualToString:@"track_playback_started"])
+        {
+            self.currentArtist = response[@"tl_track"][@"track"][@"name"];
+            self.currentArtist = response[@"tl_track"][@"track"][@"artists"][0][@"name"];
+            [self.mcdelegate playStateChanged:self];
+        }
     }
-    NSLog(message);
+    else if([response objectForKey:@"jsonrpc"]) // We received a JSONRPC response
+    {
+        [self processRPCResponse:response];
+    }
+    //NSLog(message);
 
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 {
     NSLog(@"Websocket connected!");
+    self.connected = true;
     [self.mcdelegate connected:self];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 {
-    NSLog(@"Websocket disconnected!");
+    NSLog(@"Websocket closed!");
+    self.connected = false;
     _webSocket.delegate = nil;
     [self.mcdelegate disconnected:self];
 }
@@ -96,6 +159,7 @@
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
 {
     NSLog(@"Websocket failed!");
+    self.connected = false;
     _webSocket.delegate = nil;
     [self.mcdelegate disconnected:self];
 }

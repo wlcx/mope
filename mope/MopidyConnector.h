@@ -12,22 +12,37 @@
 
 @protocol MopidyConnectorDelegate
 
-- (void)playStateChanged:(MopidyConnector *)mopidyConnector;
-- (void)connected:(MopidyConnector *)mopidyConnector;
-- (void)disconnected:(MopidyConnector *)mopidyConnector;
+- (void)playStateChanged:(MopidyConnector *)sender;
+- (void)connected:(MopidyConnector *)sender;
+- (void)disconnected:(MopidyConnector *)sender;
 
 @end
 
 @interface MopidyConnector : NSObject
 
 @property (nonatomic, assign) id <MopidyConnectorDelegate> mcdelegate;
+
 @property NSURL *socketURL;
+@property BOOL connected;
 
 @property NSString *currentPlayState;
+@property NSString *currentTrack;
+@property NSString *currentArtist;
+
+@property NSMutableDictionary *pendingInvocations;
+@property NSInteger requestID;
 
 - (id)initWithURL:(NSURL *)socketURL;
+
 - (void)connect;
+- (void)disconnect;
+
 - (void)togglePlayState;
 - (void)updatePlayState;
-- (NSMutableDictionary *)makeRPCMethod:(NSString *)method;
+
+- (void)invokeRPCMethod:(NSString *)method
+                success:(void (^)(NSDictionary *response))success
+                  error:(void (^)(NSDictionary *response))error;
+-(void)processRPCResponse:(NSDictionary *)response;
+
 @end

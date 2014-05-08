@@ -28,10 +28,10 @@
                 <menuItem title="Now Playing:" enabled="NO" id="pIB-xf-9Lw">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="trackname" hidden="YES" enabled="NO" id="zLU-KE-kAL">
+                <menuItem title="trackname" enabled="NO" id="zLU-KE-kAL">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="artistname" hidden="YES" enabled="NO" id="Gm2-Tv-5o1">
+                <menuItem title="artistname" enabled="NO" id="Gm2-Tv-5o1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Meg-gG-B6m"/>

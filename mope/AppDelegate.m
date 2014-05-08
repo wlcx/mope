@@ -19,7 +19,7 @@
 //    serviceBrowser = [[NSNetServiceBrowser alloc] init];
     self.alert = [NSAlert alertWithMessageText:@"Enter server URL" defaultButton:@"Connect" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@""];
     self.urlInput = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 220, 24)];
-    [self.urlInput setStringValue:@"ws://127.0.0.1:6680/mopidy/ws/"];
+    [self.urlInput setStringValue:@"ws://10.10.0.1:6680/mopidy/ws/"];
     [self.alert setAccessoryView:self.urlInput];
 }
 
@@ -75,6 +75,8 @@
     {
         [[self menuItemPlayPause] setTitle:@"Play"];
     }
+    [[self tracklabel] setTitle: [mopidyConnector currentTrack]];
+    [[self artistlabel] setTitle: [mopidyConnector currentArtist]];
 }
 
 - (void)connected:(MopidyConnector *)sender

@@ -119,8 +119,17 @@
 - (void)updatePlayState
 {
     [self invokeRPCMethod:@"core.playback.get_state"
-                  success:^(NSDictionary *response){self.currentPlayState = response[@"result"]; [self.mcdelegate playStateChanged:self];}
+                  success:^(NSDictionary *response){self.currentPlayState = response[@"result"];}
                     error:^(NSDictionary *response){}
+     ];
+    [self invokeRPCMethod:@"core.playback.get_current_track"
+                  success:^(NSDictionary *response){
+                      self.currentTrack = response[@"result"][@"name"];
+                      self.currentArtist = response[@"result"][@"artists"][0][@"name"];
+                      NSLog(@"%@", response);
+                      [self.mcdelegate playStateChanged:self];
+                  }
+                    error:^(NSDictionary *response){NSLog(@"%@", response);}
      ];
 }
 
@@ -139,7 +148,7 @@
         }
         if([response[@"event"] isEqualToString:@"track_playback_started"])
         {
-            self.currentArtist = response[@"tl_track"][@"track"][@"name"];
+            self.currentTrack = response[@"tl_track"][@"track"][@"name"];
             self.currentArtist = response[@"tl_track"][@"track"][@"artists"][0][@"name"];
             [self.mcdelegate playStateChanged:self];
         }

@@ -93,8 +93,27 @@
     }
     else if([[self currentPlayState] isEqualToString:@"paused"])
     {
-        [self invokeRPCMethod:@"core.playback.play" success:^(NSDictionary *response){} error:^(NSDictionary *response){}];
+        [self invokeRPCMethod:@"core.playback.play"
+                      success:^(NSDictionary *response){}
+                        error:^(NSDictionary *response){}
+         ];
     }
+}
+
+- (void)nextTrack
+{
+    [self invokeRPCMethod:@"core.playback.next"
+                  success:^(NSDictionary *response){}
+                    error:^(NSDictionary *response){}
+     ];
+}
+
+- (void)prevTrack
+{
+    [self invokeRPCMethod:@"core.playback.previous"
+                  success:^(NSDictionary *response){}
+                    error:^(NSDictionary *response){}
+     ];
 }
 
 - (void)updatePlayState

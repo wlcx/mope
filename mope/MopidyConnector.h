@@ -30,6 +30,8 @@
 - (void)disconnect;
 
 - (void)togglePlayState;
+- (void)nextTrack;
+- (void)prevTrack;
 - (void)updatePlayState;
 
 - (void)invokeRPCMethod:(NSString *)method

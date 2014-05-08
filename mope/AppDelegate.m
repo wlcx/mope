@@ -33,6 +33,16 @@
     [mopidyConnector togglePlayState];
 }
 
+- (IBAction)nextTrack:(id)sender
+{
+    [mopidyConnector nextTrack];
+}
+
+- (IBAction)prevTrack:(id)sender
+{
+    [mopidyConnector prevTrack];
+}
+
 - (IBAction)toggleConnect:(id)sender;
 {
     if(mopidyConnector.connected)
@@ -80,4 +90,5 @@
     [self.statusItem setImage:self.statusImageInactive];
     [self.menuItemConnectToggle setTitle:@"Connect"];
 }
+
 @end

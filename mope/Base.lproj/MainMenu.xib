@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D45a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
@@ -15,7 +15,9 @@
             <connections>
                 <outlet property="artistlabel" destination="Gm2-Tv-5o1" id="NQX-7E-JX6"/>
                 <outlet property="menuItemConnectToggle" destination="2GG-nb-Uqd" id="vrD-Mh-iZn"/>
+                <outlet property="menuItemNext" destination="zeS-oq-P21" id="5P0-nS-EtQ"/>
                 <outlet property="menuItemPlayPause" destination="YAS-dZ-Ldc" id="8TL-j7-S4y"/>
+                <outlet property="menuItemPrev" destination="ibF-WV-eJ9" id="63Q-DT-KrY"/>
                 <outlet property="statusMenu" destination="HAD-Ws-SPB" id="E7K-CQ-1yH"/>
                 <outlet property="tracklabel" destination="zLU-KE-kAL" id="nRX-PB-qMH"/>
             </connections>
@@ -37,6 +39,18 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="playPause:" target="Voe-Tx-rLC" id="ZtD-C2-xWT"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Next" id="zeS-oq-P21">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="nextTrack:" target="Voe-Tx-rLC" id="PvK-VK-xxZ"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Prev" id="ibF-WV-eJ9">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="prevTrack:" target="Voe-Tx-rLC" id="hPh-4U-hIv"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="btm-cm-A1S"/>

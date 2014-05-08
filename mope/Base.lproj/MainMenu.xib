@@ -14,10 +14,12 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="artistlabel" destination="Gm2-Tv-5o1" id="NQX-7E-JX6"/>
+                <outlet property="controlsSeparator" destination="btm-cm-A1S" id="btv-VM-b97"/>
                 <outlet property="menuItemConnectToggle" destination="2GG-nb-Uqd" id="vrD-Mh-iZn"/>
                 <outlet property="menuItemNext" destination="zeS-oq-P21" id="5P0-nS-EtQ"/>
                 <outlet property="menuItemPlayPause" destination="YAS-dZ-Ldc" id="8TL-j7-S4y"/>
                 <outlet property="menuItemPrev" destination="ibF-WV-eJ9" id="63Q-DT-KrY"/>
+                <outlet property="nowPlayingSeparator" destination="Meg-gG-B6m" id="hGg-M8-fbg"/>
                 <outlet property="statusMenu" destination="HAD-Ws-SPB" id="E7K-CQ-1yH"/>
                 <outlet property="tracklabel" destination="zLU-KE-kAL" id="nRX-PB-qMH"/>
             </connections>
@@ -25,35 +27,32 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="HAD-Ws-SPB">
             <items>
-                <menuItem title="Now Playing:" enabled="NO" id="pIB-xf-9Lw">
+                <menuItem hidden="YES" enabled="NO" id="zLU-KE-kAL">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="trackname" enabled="NO" id="zLU-KE-kAL">
+                <menuItem hidden="YES" enabled="NO" id="Gm2-Tv-5o1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="artistname" enabled="NO" id="Gm2-Tv-5o1">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="Meg-gG-B6m"/>
-                <menuItem title="Play" id="YAS-dZ-Ldc">
+                <menuItem isSeparatorItem="YES" hidden="YES" id="Meg-gG-B6m"/>
+                <menuItem title="Play" hidden="YES" id="YAS-dZ-Ldc">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="playPause:" target="Voe-Tx-rLC" id="ZtD-C2-xWT"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Next" id="zeS-oq-P21">
+                <menuItem title="Next" hidden="YES" id="zeS-oq-P21">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="nextTrack:" target="Voe-Tx-rLC" id="PvK-VK-xxZ"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Prev" id="ibF-WV-eJ9">
+                <menuItem title="Prev" hidden="YES" id="ibF-WV-eJ9">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="prevTrack:" target="Voe-Tx-rLC" id="hPh-4U-hIv"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="btm-cm-A1S"/>
+                <menuItem isSeparatorItem="YES" hidden="YES" id="btm-cm-A1S"/>
                 <menuItem title="Connect" id="2GG-nb-Uqd">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

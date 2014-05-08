@@ -40,6 +40,8 @@
     NSLog(@"Closed");
     _webSocket.delegate = nil;
     self.connected = false;
+    self.currentArtist = @"";
+    self.currentTrack = @"";
     [self.mcdelegate disconnected:self];
 }
 
@@ -124,9 +126,16 @@
      ];
     [self invokeRPCMethod:@"core.playback.get_current_track"
                   success:^(NSDictionary *response){
-                      self.currentTrack = response[@"result"][@"name"];
-                      self.currentArtist = response[@"result"][@"artists"][0][@"name"];
-                      NSLog(@"%@", response);
+                      if(response[@"result"] != [NSNull null])
+                      {
+                          self.currentTrack = response[@"result"][@"name"];
+                          self.currentArtist = response[@"result"][@"artists"][0][@"name"];
+                      }
+                      else // Nothing playing
+                      {
+                          self.currentTrack = @"";
+                          self.currentArtist = @"";
+                      }
                       [self.mcdelegate playStateChanged:self];
                   }
                     error:^(NSDictionary *response){NSLog(@"%@", response);}
@@ -157,7 +166,6 @@
     {
         [self processRPCResponse:response];
     }
-    //NSLog(message);
 
 }
 

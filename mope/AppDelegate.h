@@ -5,9 +5,11 @@
 
 @property (weak) IBOutlet NSMenuItem *tracklabel;
 @property (weak) IBOutlet NSMenuItem *artistlabel;
+@property (weak) IBOutlet NSMenuItem *nowPlayingSeparator;
 @property (weak) IBOutlet NSMenuItem *menuItemPlayPause;
 @property (weak) IBOutlet NSMenuItem *menuItemNext;
 @property (weak) IBOutlet NSMenuItem *menuItemPrev;
+@property (weak) IBOutlet NSMenuItem *controlsSeparator;
 @property (weak) IBOutlet NSMenuItem *menuItemConnectToggle;
 @property (strong, nonatomic) NSStatusItem *statusItem;
 @property (strong, nonatomic) IBOutlet NSMenu *statusMenu;
@@ -23,4 +25,6 @@
 - (IBAction)quit:(id)sender;
 - (IBAction)toggleConnect:(id)sender;
 
+- (void)hidePlayControls:(BOOL)hidden;
+- (void)hideNowPlaying:(BOOL)hidden;
 @end

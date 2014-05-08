@@ -60,20 +60,39 @@
     }
 }
 
+- (void)hidePlayControls:(BOOL)hidden
+{
+    [self.menuItemPlayPause setHidden:hidden];
+    [self.menuItemNext setHidden:hidden];
+    [self.menuItemPrev setHidden:hidden];
+    [self.controlsSeparator setHidden:hidden];
+
+}
+
+- (void)hideNowPlaying:(BOOL)hidden
+{
+    [self.artistlabel setHidden:hidden];
+    [self.tracklabel setHidden:hidden];
+    [self.nowPlayingSeparator setHidden:hidden];
+}
+
 #pragma mark - MopidyConnectorDelegate
 - (void)playStateChanged:(MopidyConnector *)sender
 {
     if([[mopidyConnector currentPlayState] isEqualToString:@"playing"])
     {
         [[self menuItemPlayPause] setTitle:@"Pause"];
+        [self hideNowPlaying:false];
     }
     else if([[mopidyConnector currentPlayState] isEqualToString:@"paused"])
     {
         [[self menuItemPlayPause] setTitle:@"Play"];
+        [self hideNowPlaying:false];
     }
     else if([[mopidyConnector currentPlayState] isEqualToString:@"stopped"])
     {
         [[self menuItemPlayPause] setTitle:@"Play"];
+        [self hideNowPlaying:true];
     }
     [[self tracklabel] setTitle: [mopidyConnector currentTrack]];
     [[self artistlabel] setTitle: [mopidyConnector currentArtist]];
@@ -85,12 +104,15 @@
     [self.statusItem setImage:self.statusImageActive];
     [self.menuItemConnectToggle setTitle:@"Disconnect"];
     [mopidyConnector updatePlayState];
+    [self hidePlayControls:false];
 }
 
 - (void)disconnected:(MopidyConnector *)sender
 {
     [self.statusItem setImage:self.statusImageInactive];
     [self.menuItemConnectToggle setTitle:@"Connect"];
+    [self hidePlayControls:true];
+    [self hideNowPlaying:true];
 }
 
 @end

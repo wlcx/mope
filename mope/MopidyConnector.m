@@ -1,11 +1,3 @@
-//
-//  MopidyConnector.m
-//  mope
-//
-//  Created by Sam W on 27/04/2014.
-//  Copyright (c) 2014 wlcx. All rights reserved.
-//
-
 #import "MopidyConnector.h"
 #import "SRWebSocket.h"
 

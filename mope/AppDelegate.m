@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  mope
-//
-//  Created by Samuel Willcocks on 24/04/2014.
-//  Copyright (c) 2014 wlcx. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "MopidyConnector.h"
 

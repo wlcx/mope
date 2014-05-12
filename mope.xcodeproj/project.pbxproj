@@ -10,8 +10,12 @@
 		226B8525190CBC14002BF624 /* MopidyConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 226B8523190CBC14002BF624 /* MopidyConnector.h */; };
 		226B8526190CBC14002BF624 /* MopidyConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 226B8524190CBC14002BF624 /* MopidyConnector.m */; };
 		22B745E919185CF4009CB6BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22B745E819185CF4009CB6BC /* README.md */; };
-		DB650EBD190978A1003C7BA0 /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB650EB81909788C003C7BA0 /* SocketRocket.framework */; };
-		DB650EBF190978C2003C7BA0 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = DB650EBE190978C2003C7BA0 /* SRWebSocket.h */; };
+		22BE35E119202A980006F0EB /* AXStatusItemPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE35DF19202A980006F0EB /* AXStatusItemPopup.h */; };
+		22BE35E219202A980006F0EB /* AXStatusItemPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE35E019202A980006F0EB /* AXStatusItemPopup.m */; };
+		22BE35E6192047560006F0EB /* MopeMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BE35E3192047560006F0EB /* MopeMainView.xib */; };
+		22BE35E7192047560006F0EB /* MopePanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE35E4192047560006F0EB /* MopePanelController.h */; };
+		22BE35E8192047560006F0EB /* MopePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE35E5192047560006F0EB /* MopePanelController.m */; };
+		C002D8D869AB4823929AC0D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C37E8284A5647608AEACAC3 /* libPods.a */; };
 		DBF1C320190954A6007F5B40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF1C31F190954A6007F5B40 /* Cocoa.framework */; };
 		DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBF1C328190954A6007F5B40 /* InfoPlist.strings */; };
 		DBF1C32C190954A6007F5B40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF1C32B190954A6007F5B40 /* main.m */; };
@@ -25,34 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DB650EB51909788C003C7BA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F6B2082D1450F597009315AF;
-			remoteInfo = SocketRocket;
-		};
-		DB650EB71909788C003C7BA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F668C880153E91210044DBAC;
-			remoteInfo = SocketRocketOSX;
-		};
-		DB650EB91909788C003C7BA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F6BDA802145900D200FE3253;
-			remoteInfo = SRWebSocketTests;
-		};
-		DB650EBB1909788C003C7BA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F62417E314D52F3C003CE997;
-			remoteInfo = TestChat;
-		};
 		DBF1C341190954A6007F5B40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DBF1C314190954A6007F5B40 /* Project object */;
@@ -63,11 +39,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15615CF946A3424AA6C6E441 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		22348EFB191F283C00818AD9 /* libPods-SocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SocketRocket.a"; path = "Pods/build/Debug/libPods-SocketRocket.a"; sourceTree = "<group>"; };
 		226B8523190CBC14002BF624 /* MopidyConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MopidyConnector.h; sourceTree = "<group>"; };
 		226B8524190CBC14002BF624 /* MopidyConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MopidyConnector.m; sourceTree = "<group>"; };
 		22B745E819185CF4009CB6BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SocketRocket.xcodeproj; path = SocketRocket/SocketRocket.xcodeproj; sourceTree = "<group>"; };
-		DB650EBE190978C2003C7BA0 /* SRWebSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
+		22BE35DF19202A980006F0EB /* AXStatusItemPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXStatusItemPopup.h; sourceTree = "<group>"; };
+		22BE35E019202A980006F0EB /* AXStatusItemPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXStatusItemPopup.m; sourceTree = "<group>"; };
+		22BE35E3192047560006F0EB /* MopeMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MopeMainView.xib; sourceTree = "<group>"; };
+		22BE35E4192047560006F0EB /* MopePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MopePanelController.h; sourceTree = "<group>"; };
+		22BE35E5192047560006F0EB /* MopePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MopePanelController.m; sourceTree = "<group>"; };
+		5C37E8284A5647608AEACAC3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF1C31C190954A6007F5B40 /* mope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF1C31F190954A6007F5B40 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DBF1C322190954A6007F5B40 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -93,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB650EBD190978A1003C7BA0 /* SocketRocket.framework in Frameworks */,
 				DBF1C320190954A6007F5B40 /* Cocoa.framework in Frameworks */,
+				C002D8D869AB4823929AC0D8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,27 +92,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DB650EAF1909788B003C7BA0 /* Products */ = {
+		22BE35DE19202A980006F0EB /* AXStatusItemPopup */ = {
 			isa = PBXGroup;
 			children = (
-				DB650EB61909788C003C7BA0 /* libSocketRocket.a */,
-				DB650EB81909788C003C7BA0 /* SocketRocket.framework */,
-				DB650EBA1909788C003C7BA0 /* SRWebSocketTests.octest */,
-				DB650EBC1909788C003C7BA0 /* TestChat.app */,
+				22BE35DF19202A980006F0EB /* AXStatusItemPopup.h */,
+				22BE35E019202A980006F0EB /* AXStatusItemPopup.m */,
 			);
-			name = Products;
+			name = AXStatusItemPopup;
+			path = AXStatusItemPopup/AXStatusItemPopup;
 			sourceTree = "<group>";
 		};
 		DBF1C313190954A6007F5B40 = {
 			isa = PBXGroup;
 			children = (
+				22BE35DE19202A980006F0EB /* AXStatusItemPopup */,
 				22B745E819185CF4009CB6BC /* README.md */,
-				DB650EBE190978C2003C7BA0 /* SRWebSocket.h */,
-				DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */,
 				DBF1C325190954A6007F5B40 /* mope */,
 				DBF1C343190954A6007F5B40 /* mopeTests */,
 				DBF1C31E190954A6007F5B40 /* Frameworks */,
 				DBF1C31D190954A6007F5B40 /* Products */,
+				15615CF946A3424AA6C6E441 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,9 +127,11 @@
 		DBF1C31E190954A6007F5B40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22348EFB191F283C00818AD9 /* libPods-SocketRocket.a */,
 				DBF1C31F190954A6007F5B40 /* Cocoa.framework */,
 				DBF1C33E190954A6007F5B40 /* XCTest.framework */,
 				DBF1C321190954A6007F5B40 /* Other Frameworks */,
+				5C37E8284A5647608AEACAC3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,6 +154,9 @@
 				226B8523190CBC14002BF624 /* MopidyConnector.h */,
 				226B8524190CBC14002BF624 /* MopidyConnector.m */,
 				DBF1C334190954A6007F5B40 /* MainMenu.xib */,
+				22BE35E3192047560006F0EB /* MopeMainView.xib */,
+				22BE35E4192047560006F0EB /* MopePanelController.h */,
+				22BE35E5192047560006F0EB /* MopePanelController.m */,
 				DBF1C337190954A6007F5B40 /* Images.xcassets */,
 				DBF1C326190954A6007F5B40 /* Supporting Files */,
 			);
@@ -213,8 +199,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BE35E7192047560006F0EB /* MopePanelController.h in Headers */,
 				226B8525190CBC14002BF624 /* MopidyConnector.h in Headers */,
-				DB650EBF190978C2003C7BA0 /* SRWebSocket.h in Headers */,
+				22BE35E119202A980006F0EB /* AXStatusItemPopup.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,10 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBF1C34D190954A6007F5B40 /* Build configuration list for PBXNativeTarget "mope" */;
 			buildPhases = (
+				ADA89EFFF79C4DC3A42D3CE0 /* Check Pods Manifest.lock */,
 				DBF1C318190954A6007F5B40 /* Sources */,
 				DBF1C319190954A6007F5B40 /* Frameworks */,
 				DBF1C31A190954A6007F5B40 /* Resources */,
 				DB650EAB1909634C003C7BA0 /* Headers */,
+				84773550D78C4A9B87D43E0B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,12 +271,6 @@
 			mainGroup = DBF1C313190954A6007F5B40;
 			productRefGroup = DBF1C31D190954A6007F5B40 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DB650EAF1909788B003C7BA0 /* Products */;
-					ProjectRef = DB650EAE1909788B003C7BA0 /* SocketRocket.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				DBF1C31B190954A6007F5B40 /* mope */,
@@ -296,43 +279,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		DB650EB61909788C003C7BA0 /* libSocketRocket.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSocketRocket.a;
-			remoteRef = DB650EB51909788C003C7BA0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB650EB81909788C003C7BA0 /* SocketRocket.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SocketRocket.framework;
-			remoteRef = DB650EB71909788C003C7BA0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB650EBA1909788C003C7BA0 /* SRWebSocketTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SRWebSocketTests.octest;
-			remoteRef = DB650EB91909788C003C7BA0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DB650EBC1909788C003C7BA0 /* TestChat.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = TestChat.app;
-			remoteRef = DB650EBB1909788C003C7BA0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		DBF1C31A190954A6007F5B40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */,
+				22BE35E6192047560006F0EB /* MopeMainView.xib in Resources */,
 				DBF1C338190954A6007F5B40 /* Images.xcassets in Resources */,
 				22B745E919185CF4009CB6BC /* README.md in Resources */,
 				DBF1C336190954A6007F5B40 /* MainMenu.xib in Resources */,
@@ -349,12 +302,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84773550D78C4A9B87D43E0B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADA89EFFF79C4DC3A42D3CE0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DBF1C318190954A6007F5B40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				226B8526190CBC14002BF624 /* MopidyConnector.m in Sources */,
+				22BE35E219202A980006F0EB /* AXStatusItemPopup.m in Sources */,
+				22BE35E8192047560006F0EB /* MopePanelController.m in Sources */,
 				DBF1C333190954A6007F5B40 /* AppDelegate.m in Sources */,
 				DBF1C32C190954A6007F5B40 /* main.m in Sources */,
 			);
@@ -478,12 +466,17 @@
 		};
 		DBF1C34E190954A6007F5B40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15615CF946A3424AA6C6E441 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mope/mope-Prefix.pch";
 				INFOPLIST_FILE = "mope/mope-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -491,12 +484,17 @@
 		};
 		DBF1C34F190954A6007F5B40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15615CF946A3424AA6C6E441 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mope/mope-Prefix.pch";
 				INFOPLIST_FILE = "mope/mope-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -48,12 +48,12 @@
     }
 }
 
-- (void)hidePlayControls:(BOOL)hidden
+- (void)enablePlayControls:(BOOL)enabled
 {
-    [self.buttonPlayPause setHidden:hidden];
-    [self.buttonItemNext setHidden:hidden];
-    [self.buttonItemPrev setHidden:hidden];
-    
+    [self.buttonPlayPause setEnabled:enabled];
+    [self.buttonItemNext setEnabled:enabled];
+    [self.buttonItemPrev setEnabled:enabled];
+    [self.sliderVolume setEnabled:enabled];
 }
 
 - (void)hideNowPlaying:(BOOL)hidden
@@ -97,7 +97,7 @@
     [self.statusItemPopup setAlternateImage:[NSImage imageNamed:@"statusbar_icon_active"]];
     [self.buttonConnectToggle setTitle:@"Disconnect"];
     [mopidyConnector updatePlayState];
-    [self hidePlayControls:false];
+    [self enablePlayControls:true];
 }
 
 - (void)disconnected:(MopidyConnector *)sender
@@ -105,7 +105,7 @@
     [self.statusItemPopup setImage:[NSImage imageNamed:@"statusbar_icon_inactive"]];
     [self.statusItemPopup setAlternateImage:[NSImage imageNamed:@"statusbar_icon_inactive"]];
     [self.buttonConnectToggle setTitle:@"Connect"];
-    [self hidePlayControls:true];
+    [self enablePlayControls:false];
     [self hideNowPlaying:true];
 }
 

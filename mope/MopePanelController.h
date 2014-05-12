@@ -16,7 +16,7 @@
 - (IBAction)prev:(id)sender;
 - (IBAction)connectToggle:(id)sender;
 
-- (void)hidePlayControls:(BOOL)hidden;
+- (void)enablePlayControls:(BOOL)hidden;
 - (void)hideNowPlaying:(BOOL)hidden;
 
 @end

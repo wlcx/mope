@@ -46,13 +46,28 @@
 }
 
 - (void)invokeRPCMethod:(NSString *)method
+                success:(void (^)(NSDictionary *))success
+                  error:(void (^)(NSDictionary *))error;
+{
+    [self invokeRPCMethod:method withParameters:@[] success:success error:error];
+}
+
+- (void)invokeRPCMethod:(NSString *)method
+         withParameters:(id)parameters
                 success:(void (^)(NSDictionary *response))success
                   error:(void (^)(NSDictionary *response))error;
 {
+    if(!parameters)
+    {
+        parameters = @[];
+    }
+    NSAssert([parameters isKindOfClass:[NSDictionary class]] || [parameters isKindOfClass:[NSArray class]], @"Expected parameters as NSArray or NSDictionary");
+    
     NSInteger requestId = self.requestID++; // get the next request id then increment it for next time
     NSMutableDictionary *payload = [NSMutableDictionary dictionary];
     payload[@"jsonrpc"] = @"2.0";
     payload[@"method"] = method;
+    payload[@"params"] = parameters;
     payload[@"id"] = [NSNumber numberWithInteger:requestId];
     [_webSocket send:([NSJSONSerialization dataWithJSONObject:payload options:0 error:nil])];
     [self.pendingInvocations setObject:[NSArray arrayWithObjects: success, error, nil] forKey: [NSNumber numberWithInteger:requestId]];

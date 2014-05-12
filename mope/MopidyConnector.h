@@ -37,6 +37,11 @@
 - (void)invokeRPCMethod:(NSString *)method
                 success:(void (^)(NSDictionary *response))success
                   error:(void (^)(NSDictionary *response))error;
+- (void)invokeRPCMethod:(NSString *)method
+         withParameters:(id)parameters
+                success:(void (^)(NSDictionary *))success
+                  error:(void (^)(NSDictionary *))error;
+
 -(void)processRPCResponse:(NSDictionary *)response;
 
 @end

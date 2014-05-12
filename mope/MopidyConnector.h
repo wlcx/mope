@@ -18,6 +18,7 @@
 @property BOOL connected;
 
 @property NSString *currentPlayState;
+@property NSInteger volume;
 @property NSString *currentTrack;
 @property NSString *currentArtist;
 
@@ -32,6 +33,7 @@
 - (void)togglePlayState;
 - (void)nextTrack;
 - (void)prevTrack;
+- (void)changeVolume:(NSInteger)volume;
 - (void)updatePlayState;
 
 - (void)invokeRPCMethod:(NSString *)method

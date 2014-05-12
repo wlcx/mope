@@ -133,10 +133,24 @@
      ];
 }
 
+- (void)changeVolume:(NSInteger)volume
+{
+    self.volume = volume;
+    [self invokeRPCMethod:@"core.playback.set_volume"
+           withParameters:@{@"volume": [NSNumber numberWithInteger:volume]}
+                  success:^(NSDictionary *response){}
+                    error:^(NSDictionary *response){}
+     ];
+}
+
 - (void)updatePlayState
 {
     [self invokeRPCMethod:@"core.playback.get_state"
-                  success:^(NSDictionary *response){self.currentPlayState = response[@"result"];}
+                  success:^(NSDictionary *response)
+                  {
+                      self.currentPlayState = response[@"result"];
+                      [self.mcdelegate playStateChanged:self];
+                  }
                     error:^(NSDictionary *response){}
      ];
     [self invokeRPCMethod:@"core.playback.get_current_track"
@@ -154,6 +168,13 @@
                       [self.mcdelegate playStateChanged:self];
                   }
                     error:^(NSDictionary *response){NSLog(@"%@", response);}
+     ];
+    [self invokeRPCMethod:@"core.playback.get_volume"
+                  success:^(NSDictionary *response){
+                      self.volume = [response[@"result"] integerValue];
+                      [self.mcdelegate playStateChanged:self];
+                  }
+                    error:^(NSDictionary *response){}
      ];
 }
 
@@ -174,6 +195,11 @@
         {
             self.currentTrack = response[@"tl_track"][@"track"][@"name"];
             self.currentArtist = response[@"tl_track"][@"track"][@"artists"][0][@"name"];
+            [self.mcdelegate playStateChanged:self];
+        }
+        if([response[@"event"] isEqualToString:@"volume_changed"])
+        {
+            self.volume = [response[@"volume"] integerValue];
             [self.mcdelegate playStateChanged:self];
         }
     }

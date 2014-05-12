@@ -28,6 +28,11 @@
     [mopidyConnector prevTrack];
 }
 
+- (IBAction)volumeChanged:(id)sender
+{
+    [mopidyConnector changeVolume:[self.sliderVolume integerValue]];
+}
+
 - (IBAction)connectToggle:(id)sender {
     if(mopidyConnector.connected)
     {
@@ -70,6 +75,7 @@
     {
         [[self buttonPlayPause] setImage:[NSImage imageNamed:@"transport_pause"]];
         [self hideNowPlaying:false];
+        // FIXME: Notification currently fires for /any/ state change. Like volume. Needs to be smarter
         NSUserNotification *notification = [[NSUserNotification alloc] init];
         notification.title = @"Now playing:";
         notification.subtitle = [mopidyConnector currentTrack];
@@ -88,6 +94,7 @@
     }
     [self.trackLabel setStringValue:mopidyConnector.currentTrack];
     [self.artistLabel setStringValue:mopidyConnector.currentArtist];
+    [self.sliderVolume setIntegerValue:mopidyConnector.volume];
 }
 
 - (void)connected:(MopidyConnector *)sender

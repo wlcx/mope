@@ -11,6 +11,7 @@
                 <outlet property="buttonItemNext" destination="sIs-PH-xQR" id="Z6Q-XK-8Be"/>
                 <outlet property="buttonItemPrev" destination="D7W-YQ-N5a" id="3IZ-zS-FuP"/>
                 <outlet property="buttonPlayPause" destination="IcS-Zh-6Q6" id="eCt-nL-20U"/>
+                <outlet property="sliderVolume" destination="Hbz-Jw-60Z" id="fU2-ZZ-8ws"/>
                 <outlet property="trackLabel" destination="NWC-kM-f3G" id="cHQ-SU-HtP"/>
                 <outlet property="view" destination="c22-O7-iKe" id="5kf-XZ-Ts9"/>
             </connections>
@@ -24,7 +25,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sIs-PH-xQR">
                     <rect key="frame" x="166" y="94" width="34" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="transport_next" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="2Yc-I0-hze">
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="transport_next" imagePosition="overlaps" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="2Yc-I0-hze">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -35,7 +36,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7W-YQ-N5a">
                     <rect key="frame" x="20" y="94" width="34" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="transport_prev" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="Hex-jH-zhU">
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="transport_prev" imagePosition="overlaps" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="Hex-jH-zhU">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -46,7 +47,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcS-Zh-6Q6">
                     <rect key="frame" x="88" y="88" width="44" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="transport_play" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="yeM-3a-k5t">
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="transport_play" imagePosition="overlaps" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="yeM-3a-k5t">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -57,7 +58,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-Yk-fUg">
                     <rect key="frame" x="18" y="183" width="184" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Artist" id="pik-Gp-dY1">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="-" id="pik-Gp-dY1">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -66,14 +67,14 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWC-kM-f3G">
                     <rect key="frame" x="18" y="153" width="184" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Track" id="xd7-ie-A6V">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="-" id="xd7-ie-A6V">
                         <font key="font" metaFont="system" size="18"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAg-6I-bFM">
-                    <rect key="frame" x="96" y="13" width="92" height="32"/>
+                    <rect key="frame" x="61" y="13" width="99" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ovj-uZ-hXq">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -83,6 +84,14 @@
                         <action selector="connectToggle:" target="-2" id="miK-Kc-JAP"/>
                     </connections>
                 </button>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hbz-Jw-60Z">
+                    <rect key="frame" x="18" y="61" width="184" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="0pR-Qe-VnN"/>
+                    <connections>
+                        <action selector="volumeChanged:" target="-2" id="MPd-KO-do8"/>
+                    </connections>
+                </slider>
             </subviews>
         </customView>
     </objects>

@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "AXStatusItemPopup.h"
 
-@interface MopePanelController : NSViewController
+@interface MopeMainViewController : NSViewController
 
 @property (weak, nonatomic) AXStatusItemPopup *statusItemPopup;
 

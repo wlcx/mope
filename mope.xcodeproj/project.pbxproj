@@ -13,8 +13,8 @@
 		22BE35E119202A980006F0EB /* AXStatusItemPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE35DF19202A980006F0EB /* AXStatusItemPopup.h */; };
 		22BE35E219202A980006F0EB /* AXStatusItemPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE35E019202A980006F0EB /* AXStatusItemPopup.m */; };
 		22BE35E6192047560006F0EB /* MopeMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BE35E3192047560006F0EB /* MopeMainView.xib */; };
-		22BE35E7192047560006F0EB /* MopePanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE35E4192047560006F0EB /* MopePanelController.h */; };
-		22BE35E8192047560006F0EB /* MopePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE35E5192047560006F0EB /* MopePanelController.m */; };
+		22BE35E7192047560006F0EB /* MopeMainViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BE35E4192047560006F0EB /* MopeMainViewController.h */; };
+		22BE35E8192047560006F0EB /* MopeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BE35E5192047560006F0EB /* MopeMainViewController.m */; };
 		C002D8D869AB4823929AC0D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C37E8284A5647608AEACAC3 /* libPods.a */; };
 		DBF1C320190954A6007F5B40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF1C31F190954A6007F5B40 /* Cocoa.framework */; };
 		DBF1C32A190954A6007F5B40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBF1C328190954A6007F5B40 /* InfoPlist.strings */; };
@@ -47,8 +47,8 @@
 		22BE35DF19202A980006F0EB /* AXStatusItemPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXStatusItemPopup.h; sourceTree = "<group>"; };
 		22BE35E019202A980006F0EB /* AXStatusItemPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXStatusItemPopup.m; sourceTree = "<group>"; };
 		22BE35E3192047560006F0EB /* MopeMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MopeMainView.xib; sourceTree = "<group>"; };
-		22BE35E4192047560006F0EB /* MopePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MopePanelController.h; sourceTree = "<group>"; };
-		22BE35E5192047560006F0EB /* MopePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MopePanelController.m; sourceTree = "<group>"; };
+		22BE35E4192047560006F0EB /* MopeMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MopeMainViewController.h; sourceTree = "<group>"; };
+		22BE35E5192047560006F0EB /* MopeMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MopeMainViewController.m; sourceTree = "<group>"; };
 		5C37E8284A5647608AEACAC3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF1C31C190954A6007F5B40 /* mope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF1C31F190954A6007F5B40 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -155,8 +155,8 @@
 				226B8524190CBC14002BF624 /* MopidyConnector.m */,
 				DBF1C334190954A6007F5B40 /* MainMenu.xib */,
 				22BE35E3192047560006F0EB /* MopeMainView.xib */,
-				22BE35E4192047560006F0EB /* MopePanelController.h */,
-				22BE35E5192047560006F0EB /* MopePanelController.m */,
+				22BE35E4192047560006F0EB /* MopeMainViewController.h */,
+				22BE35E5192047560006F0EB /* MopeMainViewController.m */,
 				DBF1C337190954A6007F5B40 /* Images.xcassets */,
 				DBF1C326190954A6007F5B40 /* Supporting Files */,
 			);
@@ -199,7 +199,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22BE35E7192047560006F0EB /* MopePanelController.h in Headers */,
+				22BE35E7192047560006F0EB /* MopeMainViewController.h in Headers */,
 				226B8525190CBC14002BF624 /* MopidyConnector.h in Headers */,
 				22BE35E119202A980006F0EB /* AXStatusItemPopup.h in Headers */,
 			);
@@ -342,7 +342,7 @@
 			files = (
 				226B8526190CBC14002BF624 /* MopidyConnector.m in Sources */,
 				22BE35E219202A980006F0EB /* AXStatusItemPopup.m in Sources */,
-				22BE35E8192047560006F0EB /* MopePanelController.m in Sources */,
+				22BE35E8192047560006F0EB /* MopeMainViewController.m in Sources */,
 				DBF1C333190954A6007F5B40 /* AppDelegate.m in Sources */,
 				DBF1C32C190954A6007F5B40 /* main.m in Sources */,
 			);

@@ -1,11 +1,11 @@
-#import "MopePanelController.h"
+#import "MopeMainViewController.h"
 #import "MopidyConnector.h"
 
-@interface MopePanelController () <MopidyConnectorDelegate>
+@interface MopeMainViewController () <MopidyConnectorDelegate>
 
 @end
 
-@implementation MopePanelController {MopidyConnector *mopidyConnector;}
+@implementation MopeMainViewController {MopidyConnector *mopidyConnector;}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

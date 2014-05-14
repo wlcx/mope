@@ -44,6 +44,6 @@
                 success:(void (^)(NSDictionary *))success
                   error:(void (^)(NSDictionary *))error;
 
--(void)processRPCResponse:(NSDictionary *)response;
+- (void)processRPCResponse:(NSDictionary *)response;
 
 @end

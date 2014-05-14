@@ -7,8 +7,8 @@
 
 @implementation MopeMainViewController {MopidyConnector *mopidyConnector;}
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Initialization code here.
@@ -28,18 +28,15 @@
     [mopidyConnector prevTrack];
 }
 
-- (IBAction)volumeChanged:(id)sender
-{
+- (IBAction)volumeChanged:(id)sender {
     [mopidyConnector changeVolume:[self.sliderVolume integerValue]];
 }
 
 - (IBAction)connectToggle:(id)sender {
-    if(mopidyConnector.connected)
-    {
+    if(mopidyConnector.connected) {
         [mopidyConnector disconnect];
     }
-    else
-    {
+    else {
         NSAlert *alert = [NSAlert alertWithMessageText:@"Enter server URL" defaultButton:@"Connect" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@""];
         NSTextField *urlInput = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 220, 24)];
         [urlInput setStringValue:@"ws://10.10.0.1:6680/mopidy/ws/"];
@@ -53,26 +50,22 @@
     }
 }
 
-- (void)enablePlayControls:(BOOL)enabled
-{
+- (void)enablePlayControls:(BOOL)enabled {
     [self.buttonPlayPause setEnabled:enabled];
     [self.buttonItemNext setEnabled:enabled];
     [self.buttonItemPrev setEnabled:enabled];
     [self.sliderVolume setEnabled:enabled];
 }
 
-- (void)hideNowPlaying:(BOOL)hidden
-{
+- (void)hideNowPlaying:(BOOL)hidden {
     [self.artistLabel setHidden:hidden];
     [self.trackLabel setHidden:hidden];
 }
 
 
 #pragma mark MopidyConnectorDelegate
-- (void)playStateChanged:(MopidyConnector *)sender
-{
-    if([[mopidyConnector currentPlayState] isEqualToString:@"playing"])
-    {
+- (void)playStateChanged:(MopidyConnector *)sender {
+    if([[mopidyConnector currentPlayState] isEqualToString:@"playing"]) {
         [[self buttonPlayPause] setImage:[NSImage imageNamed:@"transport_pause"]];
         [self hideNowPlaying:false];
         // FIXME: Notification currently fires for /any/ state change. Like volume. Needs to be smarter
@@ -82,13 +75,11 @@
         notification.informativeText = [mopidyConnector currentArtist];
         [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
     }
-    else if([[mopidyConnector currentPlayState] isEqualToString:@"paused"])
-    {
+    else if([[mopidyConnector currentPlayState] isEqualToString:@"paused"]) {
         [[self buttonPlayPause] setImage:[NSImage imageNamed:@"transport_play"]];
         [self hideNowPlaying:false];
     }
-    else if([[mopidyConnector currentPlayState] isEqualToString:@"stopped"])
-    {
+    else if([[mopidyConnector currentPlayState] isEqualToString:@"stopped"]) {
         [[self buttonPlayPause] setImage:[NSImage imageNamed:@"transport_play"]];
         [self hideNowPlaying:true];
     }
@@ -97,8 +88,7 @@
     [self.sliderVolume setIntegerValue:mopidyConnector.volume];
 }
 
-- (void)connected:(MopidyConnector *)sender
-{
+- (void)connected:(MopidyConnector *)sender {
     NSLog(@"Connected");
     [self.statusItemPopup setImage:[NSImage imageNamed:@"statusbar_icon_active"]];
     [self.statusItemPopup setAlternateImage:[NSImage imageNamed:@"statusbar_icon_active"]];
@@ -107,8 +97,7 @@
     [self enablePlayControls:true];
 }
 
-- (void)disconnected:(MopidyConnector *)sender
-{
+- (void)disconnected:(MopidyConnector *)sender {
     [self.statusItemPopup setImage:[NSImage imageNamed:@"statusbar_icon_inactive"]];
     [self.statusItemPopup setAlternateImage:[NSImage imageNamed:@"statusbar_icon_inactive"]];
     [self.buttonConnectToggle setTitle:@"Connect"];

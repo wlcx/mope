@@ -9,10 +9,8 @@
     SRWebSocket *_webSocket;
 }
 
-- (id)initWithURL:(NSURL *)socketURL;
-{
-    if(self = [super init])
-    {
+- (id)initWithURL:(NSURL *)socketURL {
+    if(self = [super init]) {
         self.socketURL = socketURL;
         _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[self socketURL]]];
         self.connected = false;
@@ -26,15 +24,13 @@
         return nil;
 }
 
-- (void)connect
-{
+- (void)connect {
     NSLog(@"Opening socket....");
     _webSocket.delegate = self;
     [_webSocket open];
 }
 
-- (void)disconnect
-{
+- (void)disconnect {
     NSLog(@"Closing socket....");
     [_webSocket close];
     NSLog(@"Closed");
@@ -47,18 +43,15 @@
 
 - (void)invokeRPCMethod:(NSString *)method
                 success:(void (^)(NSDictionary *))success
-                  error:(void (^)(NSDictionary *))error;
-{
+                  error:(void (^)(NSDictionary *))error {
     [self invokeRPCMethod:method withParameters:@[] success:success error:error];
 }
 
 - (void)invokeRPCMethod:(NSString *)method
          withParameters:(id)parameters
                 success:(void (^)(NSDictionary *response))success
-                  error:(void (^)(NSDictionary *response))error;
-{
-    if(!parameters)
-    {
+                  error:(void (^)(NSDictionary *response))error {
+    if(!parameters) {
         parameters = @[];
     }
     NSAssert([parameters isKindOfClass:[NSDictionary class]] || [parameters isKindOfClass:[NSArray class]], @"Expected parameters as NSArray or NSDictionary");
@@ -73,43 +66,35 @@
     [self.pendingInvocations setObject:[NSArray arrayWithObjects: success, error, nil] forKey: [NSNumber numberWithInteger:requestId]];
 }
 
-- (void)processRPCResponse:(NSDictionary*)response
-{
+- (void)processRPCResponse:(NSDictionary*)response {
     NSArray *callbacks;
-    if((callbacks = [self.pendingInvocations objectForKey:[NSNumber numberWithInteger:[response[@"id"] integerValue]]])) // Check if we have this response's ID as a pending request
-    {
-        if([response objectForKey:@"result"])
-        {
+    if((callbacks = [self.pendingInvocations objectForKey:[NSNumber numberWithInteger:[response[@"id"] integerValue]]])) { // Check if we have this response's ID as a pending request
+        if([response objectForKey:@"result"]) {
             void (^success)(NSDictionary *response) = [callbacks objectAtIndex:0];
             success(response);
         }
-        else if([response objectForKey:@"error"])
-        {
+        else if([response objectForKey:@"error"]) {
             void (^error)(NSDictionary *response) = [callbacks objectAtIndex:0];
             error(response);
         }
         [self.pendingInvocations removeObjectForKey:response[@"id"]];
     }
-    else // We don't know anything about this ID. This probably shouldn't happen
-    {
+    else { // We don't know anything about this ID. This probably shouldn't happen
         NSLog(@"ID %@ is not one we have as pending", response[@"id"]);
         NSLog(@"Pending: %@", self.pendingInvocations);
     }
 }
 
-- (void)togglePlayState
-{
-    if([[self currentPlayState] isEqualToString:@"playing"])
-    {
+- (void)togglePlayState {
+    if([[self currentPlayState] isEqualToString:@"playing"]) {
         [self invokeRPCMethod:@"core.playback.pause"
-                      success:^(NSDictionary *response){
+                      success:^(NSDictionary *response) {
                       }
-                        error:^(NSDictionary *response){
+                        error:^(NSDictionary *response) {
                         }
          ];
     }
-    else if([[self currentPlayState] isEqualToString:@"paused"])
-    {
+    else if([[self currentPlayState] isEqualToString:@"paused"]) {
         [self invokeRPCMethod:@"core.playback.play"
                       success:^(NSDictionary *response){}
                         error:^(NSDictionary *response){}
@@ -117,24 +102,21 @@
     }
 }
 
-- (void)nextTrack
-{
+- (void)nextTrack {
     [self invokeRPCMethod:@"core.playback.next"
                   success:^(NSDictionary *response){}
                     error:^(NSDictionary *response){}
      ];
 }
 
-- (void)prevTrack
-{
+- (void)prevTrack {
     [self invokeRPCMethod:@"core.playback.previous"
                   success:^(NSDictionary *response){}
                     error:^(NSDictionary *response){}
      ];
 }
 
-- (void)changeVolume:(NSInteger)volume
-{
+- (void)changeVolume:(NSInteger)volume {
     self.volume = volume;
     [self invokeRPCMethod:@"core.playback.set_volume"
            withParameters:@{@"volume": [NSNumber numberWithInteger:volume]}
@@ -143,11 +125,9 @@
      ];
 }
 
-- (void)updatePlayState
-{
+- (void)updatePlayState {
     [self invokeRPCMethod:@"core.playback.get_state"
-                  success:^(NSDictionary *response)
-                  {
+                  success:^(NSDictionary *response) {
                       self.currentPlayState = response[@"result"];
                       [self.mcdelegate playStateChanged:self];
                   }
@@ -155,13 +135,11 @@
      ];
     [self invokeRPCMethod:@"core.playback.get_current_track"
                   success:^(NSDictionary *response){
-                      if(response[@"result"] != [NSNull null])
-                      {
+                      if(response[@"result"] != [NSNull null]) {
                           self.currentTrack = response[@"result"][@"name"];
                           self.currentArtist = response[@"result"][@"artists"][0][@"name"];
                       }
-                      else // Nothing playing
-                      {
+                      else { // Nothing playing
                           self.currentTrack = @"";
                           self.currentArtist = @"";
                       }
@@ -180,53 +158,49 @@
 
 #pragma mark - SRWebSocketDelegate
 
-- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message;
-{
+- (void)webSocket:(SRWebSocket *)webSocket
+didReceiveMessage:(id)message {
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-    if([response objectForKey:@"event"]) // We received an event from the server
-    {
-        if([response[@"event"] isEqualToString:@"playback_state_changed"])
-        {
+    if([response objectForKey:@"event"]) { // We received an event from the server
+        if([response[@"event"] isEqualToString:@"playback_state_changed"]) {
             self.currentPlayState = response[@"new_state"];
             [self.mcdelegate playStateChanged:self];
         }
-        if([response[@"event"] isEqualToString:@"track_playback_started"])
-        {
+        if([response[@"event"] isEqualToString:@"track_playback_started"]) {
             self.currentTrack = response[@"tl_track"][@"track"][@"name"];
             self.currentArtist = response[@"tl_track"][@"track"][@"artists"][0][@"name"];
             [self.mcdelegate playStateChanged:self];
         }
-        if([response[@"event"] isEqualToString:@"volume_changed"])
-        {
+        if([response[@"event"] isEqualToString:@"volume_changed"]) {
             self.volume = [response[@"volume"] integerValue];
             [self.mcdelegate playStateChanged:self];
         }
     }
-    else if([response objectForKey:@"jsonrpc"]) // We received a JSONRPC response
-    {
+    else if([response objectForKey:@"jsonrpc"]) { // We received a JSONRPC response
         [self processRPCResponse:response];
     }
 
 }
 
-- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
-{
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket {
     NSLog(@"Websocket connected!");
     self.connected = true;
     [self.mcdelegate connected:self];
 }
 
-- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
-{
+- (void)webSocket:(SRWebSocket *)webSocket
+ didCloseWithCode:(NSInteger)code
+           reason:(NSString *)reason
+         wasClean:(BOOL)wasClean {
     NSLog(@"Websocket closed!");
     self.connected = false;
     _webSocket.delegate = nil;
     [self.mcdelegate disconnected:self];
 }
 
-- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
-{
+- (void)webSocket:(SRWebSocket *)webSocket
+ didFailWithError:(NSError *)error {
     NSLog(@"Websocket failed!");
     self.connected = false;
     _webSocket.delegate = nil;
